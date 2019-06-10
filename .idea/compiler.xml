@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="camelionvocabulary.main" target="11" />
+      <module name="camelionvocabulary.test" target="11" />
+      <module name="vocabulary.main" target="11" />
+      <module name="vocabulary.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

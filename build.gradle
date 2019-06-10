@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.camelion'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "Greenwich.SR1")
+}
+
+dependencies {
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-config'
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
