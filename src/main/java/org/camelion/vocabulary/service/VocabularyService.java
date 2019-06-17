@@ -2,7 +2,7 @@ package org.camelion.vocabulary.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.camelion.vocabulary.Exception.VocabularyNotFoundException;
+import org.camelion.vocabulary.exception.VocabularyNotFoundException;
 import org.camelion.vocabulary.dto.VocabularyDto;
 import org.camelion.vocabulary.mapper.VocabularyMapper;
 import org.camelion.vocabulary.model.VocabularyEntity;

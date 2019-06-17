@@ -1,4 +1,4 @@
-package org.camelion.vocabulary.Exception;
+package org.camelion.vocabulary.exception;
 
 public class VocabularyNotFoundException extends Exception {
 

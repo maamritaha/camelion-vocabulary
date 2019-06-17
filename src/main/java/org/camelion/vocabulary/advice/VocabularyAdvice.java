@@ -1,6 +1,6 @@
 package org.camelion.vocabulary.advice;
 
-import org.camelion.vocabulary.Exception.VocabularyNotFoundException;
+import org.camelion.vocabulary.exception.VocabularyNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

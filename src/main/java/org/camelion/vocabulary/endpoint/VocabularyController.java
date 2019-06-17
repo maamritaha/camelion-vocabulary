@@ -1,7 +1,7 @@
 package org.camelion.vocabulary.endpoint;
 
 import lombok.RequiredArgsConstructor;
-import org.camelion.vocabulary.Exception.VocabularyNotFoundException;
+import org.camelion.vocabulary.exception.VocabularyNotFoundException;
 import org.camelion.vocabulary.dto.VocabularyDto;
 import org.camelion.vocabulary.service.VocabularyService;
 import org.springframework.web.bind.annotation.*;
