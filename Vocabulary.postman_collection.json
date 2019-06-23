@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "7dcef7c8-a90f-41b1-94f7-1058330666be",
+		"name": "Vocabulary",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findByCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/entities/vocabulary/findByCode/Test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"entities",
+						"vocabulary",
+						"findByCode",
+						"Test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/entities/vocabulary/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"entities",
+						"vocabulary",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"code\" : \"Test\",\n  \"label\" : \"Test vocabulary\",\n  \"description\" : \"Test vocabulary\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/entities/vocabulary/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"entities",
+						"vocabulary",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
