@@ -1,6 +1,6 @@
 package org.camelion.vocabulary.exception;
 
-public class VocabularyNotFoundException extends Exception {
+public class VocabularyNotFoundException extends RuntimeException {
 
     public VocabularyNotFoundException(Integer id) {
         super("could not find vocabulary for the id : " + id);
@@ -11,5 +11,14 @@ public class VocabularyNotFoundException extends Exception {
     }
 
     public VocabularyNotFoundException() {
+        super("could not find vocabulary");
+    }
+
+    public VocabularyNotFoundException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public VocabularyNotFoundException(Throwable cause) {
+        super(cause);
     }
 }

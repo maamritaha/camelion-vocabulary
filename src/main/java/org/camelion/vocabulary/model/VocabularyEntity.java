@@ -2,6 +2,7 @@ package org.camelion.vocabulary.model;
 
 
 import lombok.*;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -17,27 +18,29 @@ import java.time.Instant;
  * @since 1.0
  */
 @Entity
-@Table(name = "REF_VOCABULARY")
+@Table(name = "ref_vocabulary")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(exclude = {"createdDate", "createdBy", "lastModifiedDate", "LastModifiedBy"})
 @ToString
+@SequenceGenerator(name = "seq_ref_vocabulary", sequenceName = "seq_ref_vocabulary")
 public class VocabularyEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ref_vocabulary")
+    @Column(name = "voc_id")
     private Integer id;
-    @Column(name = "VOC_CODE", nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String code;
-    @Column(name = "VOC_REAL_CODE")
     private String realCode;
-    @Column(name = "VOC_LABEL", nullable = false)
+    @Column(nullable = false)
     private String label;
+    private Boolean active;
+    private Boolean visible;
+    @Lazy
     @Lob
-    @Column(name = "VOC_IMAGE")
     private byte[] image;
-    @Column(name = "VOC_DESCRIPTION")
     private String description;
     @CreatedDate
     private Instant createdDate;
@@ -47,4 +50,13 @@ public class VocabularyEntity {
     private Instant lastModifiedDate;
     @LastModifiedBy
     private String LastModifiedBy;
+
+    @PrePersist
+    private void setAnonymousUser() {
+        //TODO to replace by spring security
+        setCreatedBy("anonymousUser");
+        setLastModifiedBy("anonymousUser");
+        setCreatedDate(Instant.now());
+        setLastModifiedDate(Instant.now());
+    }
 }

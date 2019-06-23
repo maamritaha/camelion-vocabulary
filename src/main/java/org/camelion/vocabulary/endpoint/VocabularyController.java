@@ -6,6 +6,7 @@ import org.camelion.vocabulary.dto.VocabularyDto;
 import org.camelion.vocabulary.service.VocabularyService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -23,6 +24,7 @@ public class VocabularyController {
     private final VocabularyService vocabularyService;
 
 
+    @GetMapping("/getAll")
     public List<VocabularyDto> getAll() {
         return vocabularyService.getAll();
     }
@@ -33,7 +35,7 @@ public class VocabularyController {
     }
 
     @PostMapping("/create")
-    public VocabularyDto create(@RequestBody VocabularyDto vocabularyDto){
+    public VocabularyDto create(@RequestBody @Valid VocabularyDto vocabularyDto){
         return vocabularyService.create(vocabularyDto);
     }
 
