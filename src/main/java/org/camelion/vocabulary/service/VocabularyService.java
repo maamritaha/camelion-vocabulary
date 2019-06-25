@@ -47,7 +47,7 @@ public class VocabularyService {
      * Find a single vocabulary by code
      *
      * @param code the code of the requested vocabulary
-     * @return the requested {@link VocabularyDto}
+     * @return the requested {@link org.camelion.vocabulary.dto.VocabularyDto}
      * @throws VocabularyNotFoundException Exception occurred when no vocabulary found in database
      */
     public VocabularyDto findByCode(String code) throws VocabularyNotFoundException {
@@ -61,7 +61,7 @@ public class VocabularyService {
      * Find a single vocabulary by code
      *
      * @param id the id of the requested vocabulary
-     * @return the requested {@link VocabularyDto}
+     * @return the requested {@link org.camelion.vocabulary.dto.VocabularyDto}
      * @throws VocabularyNotFoundException Exception occurred when no vocabulary found in database
      */
     public VocabularyDto findById(Integer id) throws VocabularyNotFoundException {
@@ -110,7 +110,6 @@ public class VocabularyService {
      */
     public void delete(Integer id) throws VocabularyNotFoundException {
         logger.debug("execute method delete with id : {}", id);
-        logger.debug("id : " + id);
         VocabularyEntity vocabularyEntity = vocabularyRepository.findById(id)
                 .orElseThrow(() -> new VocabularyNotFoundException(id));
         vocabularyRepository.delete(vocabularyEntity);
