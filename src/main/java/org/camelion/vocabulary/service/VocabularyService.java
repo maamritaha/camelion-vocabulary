@@ -48,7 +48,7 @@ public class VocabularyService {
      *
      * @param code the code of the requested vocabulary
      * @return the requested {@link VocabularyDto}
-     * @throws VocabularyNotFoundException Exception occurred when no vocabulary found in database
+     * @throws VocabularyNotFoundException if no vocabulary found in database
      */
     public VocabularyDto findByCode(String code) throws VocabularyNotFoundException {
         logger.debug("execute method findByCode with code : {}", code);
@@ -62,7 +62,7 @@ public class VocabularyService {
      *
      * @param id the id of the requested vocabulary
      * @return the requested {@link VocabularyDto}
-     * @throws VocabularyNotFoundException Exception occurred when no vocabulary found in database
+     * @throws VocabularyNotFoundException if no vocabulary found in database
      */
     public VocabularyDto findById(Integer id) throws VocabularyNotFoundException {
         logger.debug("execute method findById with id : {}", id);
@@ -92,7 +92,7 @@ public class VocabularyService {
      * @param id            the id of the requested vocabulary to update
      * @param vocabularyDto vocabulary data to update
      * @return the updated vocabulary
-     * @throws VocabularyNotFoundException Exception occurred when no vocabulary found in database
+     * @throws VocabularyNotFoundException if no vocabulary found in database
      */
     public VocabularyDto update(Integer id, VocabularyDto vocabularyDto) throws VocabularyNotFoundException {
         logger.debug("execute method update with id : {} and vocabularyDto : {}", id, vocabularyDto.toString());
@@ -106,7 +106,7 @@ public class VocabularyService {
      * Find a vocabulary by id and delete it
      *
      * @param id the id of the requested vocabulary to be deleted
-     * @throws VocabularyNotFoundException Exception occurred when no vocabulary found in database
+     * @throws VocabularyNotFoundException if no vocabulary found in database
      */
     public void delete(Integer id) throws VocabularyNotFoundException {
         logger.debug("execute method delete with id : {}", id);
@@ -119,7 +119,7 @@ public class VocabularyService {
      * Find a vocabulary by code and delete it
      *
      * @param code the code of the requested vocabulary to be deleted
-     * @throws VocabularyNotFoundException Exception occurred when no vocabulary found in database
+     * @throws VocabularyNotFoundException if no vocabulary found in database
      */
     public void delete(String code) throws VocabularyNotFoundException {
         logger.debug("execute method delete with code : {}", code);
