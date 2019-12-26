@@ -24,6 +24,8 @@ public class VocabularyDto {
     @NotBlank
     private String code;
     private String realCode;
+    @NotNull
+    @NotBlank
     private String label;
     private byte[] image;
     private Boolean active;
