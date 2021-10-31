@@ -28,8 +28,6 @@ public class VocabularyService {
 
     private final VocabularyRepository vocabularyRepository;
 
-    Logger logger = LoggerFactory.getLogger(VocabularyService.class);
-
     /**
      * Get all vocabularies
      *
