@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS ref_vocabulary(
+  voc_id INTEGER NOT NULL CONSTRAINT reference_values_pkey PRIMARY KEY ,
+  code VARCHAR(255) NOT NULL,
+  real_code VARCHAR(255),
+  label VARCHAR(4000) NOT NULL,
+  active BOOLEAN DEFAULT TRUE,
+  visible BOOLEAN DEFAULT TRUE,
+  image OID,
+  description TEXT,
+  created_by VARCHAR(255) NOT NULL,
+  created_date TIMESTAMP NOT NULL DEFAULT NOW(),
+  last_modified_date TIMESTAMP NOT NULL DEFAULT NOW(),
+  last_modified_by VARCHAR(255) NOT NULL,
+
+  CONSTRAINT ref_vocabulary_code UNIQUE (code)
+);
+
+CREATE SEQUENCE IF NOT EXISTS "seq_ref_vocabulary"
+INCREMENT BY 1
+MINVALUE 1000
+NO MAXVALUE
+START WITH 1000
+CACHE 1
+NO CYCLE
+;
